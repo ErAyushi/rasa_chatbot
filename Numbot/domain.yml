@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - give_option
+  - start_chat
+
+actions:
+- action_handle_options
+- action_handle_pytorch
+- action_get_accesses
+- action_get_layers
+- action_get_attr
+- action_json
+- action_reports
+- action_download_pdf
+- action_handle_start_chat
+
+entities:
+- option
+
+slots:
+  option:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: option
+  # tracking in what submenu the user curtently is
+# this slot is only used in custom actions and is not related to any entity
+  submenu: 
+    type: text
+    initial_value: "main"
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  selected_access:
+    type: text
+    initial_value: "main"
+    influence_conversation: false
+    mappings: 
+    - type: custom
+
+  final_access:
+    type: text
+    initial_value: "main"
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  selected_attr:
+    type: text
+    initial_value: "main"
+    influence_conversation: false
+    mappings:
+    - type: custom
+
+  suboption:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+  - text: |
+      Hello!
+      1.Report
+
+    
+
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+   
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  
+  utter_reports:
+  - text: |
+      "do u want to report?\n
+        1. yes \n
+        2. no 
+
+  
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

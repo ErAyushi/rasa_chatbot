@@ -1,0 +1,98 @@
+{
+          
+    "success": true,
+    "message": "Successful",
+    "data": {
+        "layers": [
+            {
+                "category_id": 790,
+                "cat_name": "Fire_station",
+                "attributes": [
+                    {
+                        "col_alias": "fire_stati",
+                        "default_dashboard_col": false,
+                        "tbl_name": "tbl_fire_station",
+                        "col_name": "fire_stati",
+                        "type": "distinct"
+                    },
+                    {
+                        "col_alias": "fire_station_name",
+                        "default_dashboard_col": false,
+                        "tbl_name": "vehicle_info_1",
+                        "col_name": "fire_station_name",
+                        "type": "distinct"
+                    },
+                    {
+                        "col_alias": "no_of_ambu",
+                        "default_dashboard_col": true,
+                        "tbl_name": "tbl_fire_station",
+                        "col_name": "no_of_ambu",
+                        "type": "quantile"
+                    },
+                    {
+                        "col_alias": "no_of_fire",
+                        "default_dashboard_col": false,
+                        "tbl_name": "tbl_fire_station",
+                        "col_name": "no_of_fire",
+                        "type": "quantile"
+                    },
+                    {
+                        "col_alias": "vehcl_id",
+                        "default_dashboard_col": false,
+                        "tbl_name": "vehicle_info_1",
+                        "col_name": "vehcl_id",
+                        "type": "quantile"
+                    }
+                ],
+                "table_name": "tbl_fire_station",
+                "layer_type": "operational"
+            },
+            {
+                "category_id": 791,
+                "cat_name": "Road_centerline",
+                "attributes": [
+                    {
+                        "col_alias": "road_name",
+                        "default_dashboard_col": false,
+                        "tbl_name": "tbl_road_centerline",
+                        "col_name": "road_name",
+                        "type": "distinct"
+                    },
+                    {
+                        "col_alias": "road_type",
+                        "default_dashboard_col": false,
+                        "tbl_name": "tbl_road_centerline",
+                        "col_name": "road_type",
+                        "type": "distinct"
+                    },
+                    {
+                        "col_alias": "road_width",
+                        "default_dashboard_col": false,
+                        "tbl_name": "tbl_road_centerline",
+                        "col_name": "road_width",
+                        "type": "quantile"
+                    }
+                ],
+                "table_name": "tbl_road_centerline",
+                "layer_type": "operational"
+            },
+            {
+                "category_id": 792,
+                "cat_name": "Slum_boundary",
+                "attributes": [
+                    {
+                        "col_alias": "slum_name",
+                        "default_dashboard_col": true,
+                        "tbl_name": "tbl_slum_boundary",
+                        "col_name": "slum_name",
+                        "type": "distinct"
+                    }
+                ],
+                "table_name": "tbl_slum_boundary",
+                "layer_type": "operational"
+            }
+        ]
+    },
+    "funName": "webservice.fn_geoportal_dashboardlayers",
+    "funInputs": "133,0,234,25,3,114,74"
+}
